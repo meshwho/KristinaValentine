@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<div class="center-container">
+  <img src="static/mainPage.jpg" class="main-img" alt="">
+</div>
+
+<div class="bottom-center">
+  <a href="yes.html" class="btn" id="btn1">YESSSSS</a>
+</div>
+
+<a href="page2.html" class="btn" id="btn2">no</a>
+
+<script>
+  const btn2 = document.getElementById("btn2");
+  const btn1 = document.getElementById("btn1");
+  let scale = 1;
+
+  btn2.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    // кнопка 1 чуть больше
+    btn1.style.transform = "scale(1.15)";
+
+    // кнопка 2 меньше при каждом нажатии
+    scale *= 0.9;
+    btn2.style.transform = `scale(${scale})`;
+
+    // нижняя треть экрана
+    const padding = 10;
+    const minY = window.innerHeight * 0.65;
+    const maxY = window.innerHeight - btn2.offsetHeight - padding;
+    const maxX = window.innerWidth - btn2.offsetWidth - padding;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * (maxY - minY) + minY;
+
+    btn2.style.position = "fixed";
+    btn2.style.left = x + "px";
+    btn2.style.top = y + "px";
+    btn2.style.bottom = "auto";
+  });
+</script>
+
+</body>
+</html>
