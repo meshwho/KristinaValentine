@@ -24,14 +24,14 @@
   btn2.addEventListener("click", function(e) {
     e.preventDefault();
 
-    // кнопка 1 чуть больше
+    
     btn1.style.transform = "scale(1.15)";
 
-    // кнопка 2 меньше при каждом нажатии
+    
     scale *= 0.9;
     btn2.style.transform = `scale(${scale})`;
 
-    // нижняя треть экрана
+    
     const padding = 10;
     const minY = window.innerHeight * 0.65;
     const maxY = window.innerHeight - btn2.offsetHeight - padding;
@@ -49,3 +49,4 @@
 
 </body>
 </html>
+
